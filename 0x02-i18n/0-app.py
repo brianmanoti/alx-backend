@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-""" The main entry point for  o-app.py """
-
+"""
+Basic Flask app
+"""
 
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
-def index_file():
-    """ module to return the index page """
-    return render_template('index.html')
 
+@app.route('/', methods=['GET'], strict_slashes=False)
+def index():
+    """
+    hello world
+    """
+    return render_template('0-index.html')
